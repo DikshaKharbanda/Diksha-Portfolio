@@ -6,7 +6,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
    <!--=============== FAVICON ===============-->
-   <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+   <link rel="shortcut icon" href="assets/img/pl.png" type="image/x-icon">
 
    <!--=============== REMIXICONS ===============-->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
@@ -14,7 +14,7 @@
    <!--=============== CSS ===============-->
    <link rel="stylesheet" href="styles.css">
 
-   <title>Responsive portfolio website - Bedimcode</title>
+   <title>Diksha_Portfolio</title>
 </head>
 
 <body>
@@ -27,9 +27,9 @@
           <div class="logo"><a href="#">Port<span>folio.</span></a></div>
           <ul class="menu">
               <li><a href="#home" class="menu-btn">Home</a></li>
-              <li><a href="#about" class="menu-btn">About</a></li>
-              <li><a href="#services" class="menu-btn">Services</a></li>
-              <li><a href="#skills" class="menu-btn">Skills</a></li>
+              <li><a href="#about" class="menu-btnn">About</a></li>
+              <li><a href="#services" class="menu-btn">Licences & Certifications</a></li>
+              
               <li><a href="#contact" class="menu-btn">Contact</a></li>
           </ul>
           <div class="menu-btn">
@@ -52,13 +52,13 @@
          </div>
        
          <!-- Corrected anchor tag -->
-         <a href="#work" class="home__scroll">
-           <div class="home__scroll-box">
-             <i class="ri-arrow-down-line"></i>
-           </div>
-           <span class="home__scroll-text">Recent Works</span>
-         </a>
-       </section>
+         <a href="#recent-works" class="home__scroll">
+            <div class="home__scroll-box">
+                <i class="ri-arrow-down-line"></i>
+            </div>
+            <span class="home__scroll-text">Recent Works</span>
+        </a>
+        
        
        
        
@@ -92,7 +92,7 @@
     </section>
     
     <!--==================== INFO ====================-->
-    <section class="info section" id="info">
+    <section class="info section" id="about">
         <h2 class="section__title">ABOUT ME</h2>
     
         <div class="info__container container grid">
@@ -117,16 +117,31 @@
         <h3 class="experience__title">PROFESSIONAL EXPERIENCE</h3>
         
         <div class="experience__content grid">
-            <div class="experience__data">
+            <div class="experience__data" id="ey-block">
                 <div class="experience__company">
                     <img src="assets/img/ernst-young-ey-logo-svgrepo-com.svg" alt="EY Logo" class="company-logo">
                 </div>
                 <h5 class="experience__profession">EY (Ernst and Young)</h5>
                 <span class="experience__date">July - August 2024</span>
                 <p class="experience__description">Generative AI Intern</p>
+                <p class="experience__description1">Details -></p>
             </div>
         </div>
     </section>
+    
+    <!-- Modal for EY Block -->
+    <div id="ey-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3>EY (Ernst and Young) - Generative AI Intern</h3>
+            <p> ky pdh rhi</p>
+        </div>
+    </div>
+    
+    
+    
+    
+    
     
             <!--SKILLS-->
             <div class="skills">
