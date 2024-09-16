@@ -290,7 +290,7 @@ img {
   font-size: 25px;
   color:var(--text-color);
   display: inline-block;
-  border-bottom: 2px solid #df4f4f;
+  border-bottom: 1px solid #df4f4f;
   
 }
 
@@ -528,15 +528,40 @@ img {
 }
 
 /* Responsive Adjustments */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .work-item {
-    width: 100%; /* One item per row on smaller screens */
+    width: calc(50% - 20px); /* Two items per row for tablets */
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .work-item {
-    width: calc(50% - 20px); /* Smaller gap for medium screens */
+    width: calc(100% - 20px); /* One item per row on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  #recent-works h2 {
+    font-size: 1.5rem; /* Smaller font size for very small screens */
+    margin-bottom: 30px; /* Adjust margin */
+    margin-top: 50px; /* Adjust margin */
+  }
+
+  .work-item {
+    width: calc(100% - 10px); /* Ensure items fit well */
+    height: 360px;
+  }
+
+  .work-item img {
+    max-height: 150px; /* Reduce image height for small screens */
+  }
+
+  .work-item h3 {
+    font-size: 1.2rem; /* Adjust font size */
+  }
+
+  .work-item p {
+    font-size: 0.8rem; /* Adjust font size */
   }
 }
 
@@ -1069,6 +1094,433 @@ img {
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
+
+
+
+/* Responsive adjustments for mobile */
+
+/* Mobile Styles (max-width: 768px) */
+@media (max-width: 768px) {
+  /* Hide the menu by default on mobile */
+  .menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 70px; 
+    left: 0;
+    width: 100%;
+    background-color: crimson;
+    z-index: 999; 
+  }
+
+  /* Show the hamburger icon */
+  .menu-btn {
+   
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 1000;
+  }
+
+  /* Reduce the size of the logo and menu items for mobile */
+  .logo a {
+    font-size: 24px;
+  }
+
+  .menu li {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .menu li a {
+    font-size: 16px;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  /* Show the menu when it's active */
+  .menu.active {
+    display: flex;
+  }
+}
+
+
+@media (min-width: 413px) {
+  .navbar .menu {
+    display: flex; 
+  }
+
+  .menu-btn {
+    display: none; 
+  }
+
+  .scroll-up-btn {
+    bottom: 20px; 
+  }
+}
+
+
+
+@media (max-width: 412px) {
+  .home__container {
+    flex-direction: column; 
+    align-items: center;
+    margin: 0; 
+    padding: 20px 0; 
+    width: 100%; 
+  }
+
+  .home__img {
+    max-width: 80%; 
+    height: auto; 
+    margin: 20px 0; 
+    margin-top: 50px;
+  }
+
+  .home__name {
+    font-size: 2.0rem; 
+    text-align: center;
+    margin: 10px 0; 
+    padding-right: 190px;
+    margin-top: 80px;
+  }
+
+  .home__profession1{
+    font-size: 1.2rem; 
+    text-align: center; 
+    
+    margin-right:45px;
+  }
+  .home__profession2 {
+    font-size: small;
+    text-align: center;
+    margin: 5px 0; 
+    margin-top: 7px;
+    margin-left: 3px;
+    
+  }
+
+  .home__scroll {
+    margin: 20px auto; 
+    padding: 10px 20px; 
+    font-size: 1rem; 
+    display: inline-flex;
+    margin-left: 110px;
+    margin-top: 80px;
+  }
+
+  .home__scroll-box {
+    width: 30px; /* Adjust size */
+    height: 30px; /* Adjust size */
+  }
+
+  .ri-arrow-down-line {
+    font-size: 20px; /* Adjust font size */
+  }
+
+  .home__scroll-text {
+    font-size: 1rem; /* Adjust font size */
+  }
+
+  .button {
+    padding: 0.75rem 1.5rem; /* Adjust button padding */
+    font-size: 1rem; /* Adjust font size */
+  }
+}
+
+
+/* About Me Section - Mobile Optimization */
+@media (max-width: 768px) {
+  .about__me {
+    flex-direction: column; /* Stack items vertically */
+    gap: 20px; /* Reduce gap */
+    margin-bottom: 40px;
+  }
+
+  .about__img {
+    width: 200px; /* Smaller image */
+    height: 250px;
+  }
+
+  .about__title {
+    font-size: 22px; /* Smaller text */
+    margin-bottom: 10px;
+  }
+
+  .about__description {
+    font-size: 16px; /* Smaller text */
+    line-height: 1.4;
+    margin-bottom: 15px;
+  }
+
+  .button--primary {
+    padding: 10px 20px;
+    font-size: 14px; /* Smaller text */
+  }
+}
+
+/* Experience Section - Mobile Optimization */
+@media (max-width: 768px) {
+  .experience__content {
+    grid-template-columns: 1fr; /* Single column on small screens */
+    gap: 20px; /* Reduce gap */
+  }
+
+  .experience__data {
+    width: auto; /* Full width for mobile */
+    margin-left: 0; /* No left margin */
+    padding: 15px; /* Reduce padding */
+  }
+
+  .experience__title,
+  .experience__title2 {
+    font-size: 22px; /* Smaller heading */
+    padding-left: 20px; /* Adjust padding */
+  }
+
+  .experience__profession {
+    font-size: 18px; /* Smaller profession title */
+  }
+
+  .experience__description, .experience__description1 {
+    font-size: 14px; /* Smaller description text */
+    line-height: 1.4;
+  }
+
+  .close-btn {
+    font-size: 24px; /* Slightly smaller close button */
+  }
+}
+
+/* Modal adjustments */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 90%; /* Take more screen space on mobile */
+    padding: 15px; /* Reduce padding */
+  }
+}
+
+/* General Mobile Optimization */
+@media (max-width: 480px) {
+  .info {
+    padding: 40px 10px; /* Reduce padding for smaller screens */
+    margin-top: 60px;
+  }
+
+  .about__img-wrapper {
+    padding: 10px; /* Reduce padding */
+  }
+
+  .button--primary {
+    padding: 8px 16px; /* Smaller button */
+    font-size: 12px; /* Smaller text */
+  }
+
+  .experience__data {
+    padding: 12px; /* Further reduce padding */
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .experience__title,
+  .experience__title2 {
+    font-size: 20px; /* Further reduce heading size */
+    padding-left: 30px;
+  }
+
+  .experience__description, .experience__description1 {
+    font-size: 12px; /* Further reduce text size */
+    height: 30px;
+    width: 30px;
+  
+  }
+
+  .close-btn {
+    font-size: 22px; /* Even smaller close button */
+  }
+}
+
+/* Skills Section - Mobile Optimization */
+@media (max-width: 768px) {
+  .skills__img {
+    width: 30px; /* Slightly smaller image on mobile */
+    margin-bottom: 0.3rem; /* Reduce spacing */
+  }
+
+  .skills__name {
+    font-size: 14px; /* Smaller text for mobile */
+  }
+
+  .skills__content {
+    grid-template-columns: repeat(2, max-content); /* Reduce to two columns on mobile */
+    justify-content: center; /* Center items on mobile */
+    gap: 20px; /* Add gap between items */
+  }
+
+  .skills_box {
+    padding-left: 20px; /* Reduce padding on mobile */
+  }
+
+  .skills__bx:hover {
+    transform: translateY(-0.2rem); /* Slightly reduce hover effect for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .skills__img {
+    width: 25px; /* Further reduce image size */
+    align-items: center;
+    margin-left: 190px;
+  }
+
+  .skills__name {
+    font-size: 12px; /* Further reduce text size */
+    margin-left: 190px;
+  }
+  .skills__name1 {
+    font-size: 12px; /* Further reduce text size */
+    margin-left: 140px;
+  }
+
+  .skills__content {
+    grid-template-columns: 1fr; /* Single column on very small screens */
+    justify-content: center;
+  }
+
+  .skills_box {
+    padding-left: 10px; /* Further reduce padding */
+  }
+}
+
+/* Footer Section - Mobile Optimization */
+/* Footer Section - Mobile Optimization */
+@media (max-width: 768px) {
+  .custom-footer {
+    padding: 30px;
+  }
+
+  .custom-footer h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+
+  /* List items are now in a row */
+  .custom-footer ul {
+    padding: 10px;
+    display: flex;
+    justify-content: center; /* Center list items */
+    gap: 10px; /* Adjust space between each item */
+  }
+
+  .custom-footer ul li {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 0.9rem;
+    position: relative; /* So we can position the dots inline */
+  }
+
+  /* Inline dots */
+  .custom-footer ul li a::before {
+    content: '';
+    display: inline-block; /* Ensure the dots are inline */
+    width: 4px;
+    height: 4px;
+    background-color: #4CAF50;
+    border-radius: 50%;
+    margin-right: 5px; /* Add spacing between the dot and the text */
+    vertical-align: middle; /* Align dots with the text */
+  }
+
+  /* Adjustments for social icons */
+  .footer-social {
+    margin: 20px 0;
+  }
+
+  .footer-social a {
+    font-size: 1.2rem;
+    margin: 0 8px;
+  }
+
+  .footer-social a i {
+    width: 8px;
+    height: 8px;
+    line-height: 35px;
+  }
+
+  .footer-copyright {
+    font-size: 0.8rem;
+  }
+}
+
+/* yr */
+@media (max-width: 480px) {
+  .custom-footer {
+    padding: 20px;
+    font-size: 0.9rem; /* Adjust font size for mobile */
+  }
+
+  .custom-footer h2 {
+    font-size: 1.5rem; /* Adjust heading size */
+    margin-bottom: 40px;
+    
+  }
+
+  .custom-footer ul {
+    display: flex;
+    justify-content: center; /* Center links horizontally */
+    padding: 0;
+    margin: 0;
+    gap: 15px; /* Space between list items */
+  }
+
+  .custom-footer ul li {
+    display: inline; /* Keep list items in a row */
+    margin: 0; /* Remove margins */
+  }
+
+  .custom-footer ul li a {
+    font-size: 0.9rem; /* Adjust link font size */
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px; /* Add padding for better touch targets */
+  }
+
+  .footer-social {
+    display: flex;
+    justify-content: center; /* Center social icons horizontally */
+    gap: 10px; /* Reduced gap for fitting in screen */
+    margin: 20px 0; /* Adjust margin for spacing */
+    flex-wrap: wrap; /* Allow wrapping if needed */
+  }
+
+  .footer-social a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1rem; /* Adjust icon size */
+    display: flex;
+    align-items: center; /* Center the icon and image */
+  }
+
+  .footer-social a i {
+    display: none; /* Hide text icons */
+  }
+
+  .footer-social a img {
+    width: 24px; /* Adjust image size */
+    height: 24px; /* Adjust image size */
+    margin-right: 200px;
+  }
+
+  .footer-copyright {
+    font-size: 0.8rem; /* Adjust copyright text size */
+    margin-top: 10px; /* Adjust top margin */
+    text-align: center; /* Center copyright text */
+  }
+}
+
+
+
+
 
 
 /* For medium devices */
