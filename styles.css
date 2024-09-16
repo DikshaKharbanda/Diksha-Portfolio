@@ -215,6 +215,13 @@ img {
   display: none;
   
 }
+.menu-btnn{
+  color: #fff;
+  font-size: 23px;
+  cursor: pointer;
+  display: none;
+  
+}
 .scroll-up-btn{
   position: fixed;
   height: 45px;
@@ -309,24 +316,89 @@ img {
   text-align: left; /* Align text to the left */
   padding-left: 100px;
 }
-.home__scroll-box{
-    background-color: var(--first-color);
-    width: 32px;
-    height: 32px;
-    display: grid;
-    place-items: center;
-    font-size:1.5rem;
-    overflow: hidden;
+/* Style for the Recent Works scroll link */
+.home__scroll {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 30px;
+/* Button color */
+  border-radius: 50px;
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Adds shadow effect */
+  position: relative;
+  overflow: hidden;
+  margin-left: 800px;
 }
 
-.home__scroll-text{
-    font-weight: var(--font-semi-bold);
-    color: var(--text-color) ;
+.home__scroll:hover {
+  background-color: #0056b3; /* Darken button on hover */
+  transform: translateY(-5px); /* Move up slightly on hover */
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3); /* Intensify shadow on hover */
 }
 
-.home__scroll-box i{
-    animation:scroll-down 3s infinite;
+/* Styling for the arrow box */
+.home__scroll-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.2); /* Transparent background */
+  border-radius: 50%;
+  transition: transform 0.3s ease;
 }
+
+.home__scroll:hover .home__scroll-box {
+  transform: translateY(5px); /* Animate arrow movement down */
+}
+
+/* Arrow icon styling */
+.ri-arrow-down-line {
+  font-size: 24px;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.home__scroll:hover .ri-arrow-down-line {
+  transform: translateY(5px); /* Move the arrow downwards on hover */
+}
+
+/* Text styling */
+.home__scroll-text {
+  font-size: 18px;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.home__scroll:hover .home__scroll-text {
+  color: #e0e0e0; /* Lighten text on hover */
+}
+
+/* Adding a background blur effect when hovering */
+.home__scroll::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.1);
+  transition: backdrop-filter 0.3s ease;
+  backdrop-filter: blur(0);
+  z-index: -1;
+  border-radius: 50px;
+}
+
+.home__scroll:hover::before {
+  backdrop-filter: blur(8px); /* Adds blur effect on hover */
+}
+
 /* Animate scroll icon */
 @keyframes scroll-down{
     0%{
@@ -364,6 +436,7 @@ img {
 #recent-works {
   padding: 80px 0;
   text-align: center;
+  margin-top: 100px;
 }
 
 #recent-works h2 {
@@ -375,6 +448,7 @@ img {
   /* Accent color for section title */
   display: inline-block;
   padding-bottom: 10px;
+  margin-top: 80px;
 }
 
 /* Works List */
@@ -398,8 +472,9 @@ img {
   overflow: hidden;
   position: relative;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  height: 500px;
-  width: 600px;
+  height: 450px;
+  width: 400px;
+  margin-top: 50px;
 }
 
 /* Image Styling - Flexibility for any image size */
@@ -407,7 +482,7 @@ img {
   width: 100%;
   height: auto; /* Maintain aspect ratio */
   max-height: 300px; /* Control max height */
-  max-width: 600px;
+  max-width: 400px;
   object-fit: cover; /* Ensures image fits within container without distortion */
   border-radius: 10px;
   margin-bottom: 20px;
@@ -473,6 +548,7 @@ img {
   padding: 60px 20px;
   color: #F2F2F2;
   text-align: center;
+  margin-top: 100px;
 }
 
 
@@ -487,20 +563,31 @@ img {
   margin-bottom: 60px;
 }
 
+/* About image wrapper */
 .about__img-wrapper {
+  display: flex;
+  justify-content: center; /* Center the image horizontally */
+  align-items: center;    /* Center the image vertically */
   flex: 1;
+  padding: 20px;          /* Add some padding around the image wrapper */
 }
 
+/* About image styling */
 .about__img {
   width: 250px;
-  border-radius: 50%;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease;
+  height: 300px;              /* Ensure the image maintains a square aspect ratio */
+ 
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
 }
 
+/* Hover effect */
 .about__img:hover {
-  transform: scale(1.05);
+  transform: scale(1.1);                 /* Slightly larger scale effect */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5); /* More pronounced shadow on hover */
 }
+
+
 
 .about__content {
   flex: 2;
@@ -597,6 +684,57 @@ img {
   font-size: 16px;
   line-height: 1.5;
 }
+.experience__description1 {
+  font-size: 16px;
+  line-height: 1.5;
+  float: right;
+}
+.experience__description1:hover {
+  color: #ddf502; /* Change text color on hover */
+  background-color: rgba(0, 0, 0, 0.2); /* Optional background color change on hover */
+  border-radius: 5px; /* Optional: adds rounded corners */
+  padding: 5px; /* Optional: adds padding to the hover effect */
+}
+/* Modal container (hidden by default) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000; /* Sits above other content */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Darker background with opacity */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal content box */
+.modal-content {
+  background-color: #24294A; /* Match the background color of experience__data */
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  width: 80%;
+  max-width: 600px;
+  position: relative;
+  color: #FFF; /* Text color */
+}
+
+/* Close button (X) */
+.close-btn {
+  color: #FFD700; /* Match with experience__profession color */
+  font-size: 28px;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: #FFF; /* Slight change on hover */
+}
 
 
 /* SKILLS */
@@ -638,6 +776,7 @@ img {
   letter-spacing: 1px;
   color: #FFF;
   margin-bottom: 20px;
+  margin-top: 80px;
 }
 
 #services p {
@@ -665,6 +804,7 @@ img {
   border: 2px solid transparent;
   border-radius: 10px;
   transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s;
+  margin-top: 50px;
 }
 
 .service-item h3 {
