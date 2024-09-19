@@ -97,6 +97,16 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+  // JavaScript to toggle the menu on hamburger click
+const menuBtn = document.querySelector('.menu-btn');
+const menu = document.querySelector('.menu');
+
+// Add click event listener to the hamburger icon
+menuBtn.addEventListener('click', () => {
+  // Toggle the 'active' class to show/hide the menu
+  menu.classList.toggle('active');
+});
+
   // Modal views for services (if applicable)
   const modalViews = document.querySelectorAll('.services__modal');
   const modalBtns = document.querySelectorAll('.services__button');
